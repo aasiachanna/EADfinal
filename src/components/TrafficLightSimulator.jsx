@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-function TrafficLightSimulator(){
+export default function TrafficLightSimulator(){
 
 const TrafficLightSimulator = () => {
   const [currentLight, setCurrentLight] = useState('red');
 
   useEffect(() => {
+    
     const sequence = ['red', 'yellow', 'green'];
     let index = 0;
 
@@ -19,7 +20,7 @@ const TrafficLightSimulator = () => {
 
 return (
     <>
-      <style>{
+      <style>{`
         .traffic-container {
           display: flex;
           flex-direction: column;
@@ -60,10 +61,10 @@ return (
         }
 
         .light.green.active {
-          background-color: #00ff00;
-          box-shadow: 0 0 20px #00ff00;
+          background-color: green;
+          box-shadow: 0 0 20pxrgb(0, 255, 34);
         }
-      }</style>
+      `}</style>
 
       <div className="traffic-container">
         <h2>Traffic Light Simulator</h2>
@@ -77,4 +78,3 @@ return (
   );
 };
 }
-export default TrafficLightSimulator;
