@@ -19,10 +19,8 @@ const TrafficLightSimulator = () => {
 
 return (
     <>
-
-    <style>
-        {
-            .traffic-container {
+      <style>{
+        .traffic-container {
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -51,13 +49,32 @@ return (
           transition: background-color 0.6s, box-shadow 0.6s;
         }
 
+        .light.red.active {
+          background-color: red;
+          box-shadow: 0 0 20px red;
         }
-    </style>
-    
-    
+
+        .light.yellow.active {
+          background-color: yellow;
+          box-shadow: 0 0 20px yellow;
+        }
+
+        .light.green.active {
+          background-color: #00ff00;
+          box-shadow: 0 0 20px #00ff00;
+        }
+      }</style>
+
+      <div className="traffic-container">
+        <h2>Traffic Light Simulator</h2>
+        <div className="traffic-light">
+          <div className={`light red ${currentLight === 'red' ? 'active' : ''}`}></div>
+          <div className={`light yellow ${currentLight === 'yellow' ? 'active' : ''}`}></div>
+          <div className={`light green ${currentLight === 'green' ? 'active' : ''}`}></div>
+        </div>
+      </div>
     </>
-
-)
+  );
+};
 }
-
 export default TrafficLightSimulator;
